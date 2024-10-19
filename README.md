@@ -1,13 +1,17 @@
 # Module-Federation-Demo
 Webpack Module Federation Demo Project
 
+[其他Demo](https://github.com/aws-samples/talk-dev-to-me-twitch/tree/main/micro-frontends-module-federation)
+
+[共享模块pr](https://github.com/webpack/webpack/pull/10960)
+
 Module Federation 的核心理念是将各个应用的模块打包后，使它们能够彼此独立并在运行时共享模块。这通过 "remote" 和 "host" 概念实现，其中：
 
 Host（主应用）：负责加载和显示整个页面，并且可以从其他应用中动态加载模块。
 Remote（远程应用）：可以向主应用提供模块，并在构建过程中独立运行。
 
 
-个人理解：
+**个人理解**：
 
 关于鲁棒性而言，host应用作为主容器，可以渲染自身的业务，并且可以动态地挂载渲染其他remote应用，而这些前提是remote应用正常服务，如果出现remote应用挂掉，那么host应用的remote应用将无法加载，进而渲染其中的fallback，而host自身的业务不会受影响。
 
